@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ymunoz-m <ymunoz-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anfi <anfi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 18:14:02 by ymunoz-m          #+#    #+#             */
-/*   Updated: 2024/06/25 15:42:12 by ymunoz-m         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:04:56 by anfi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,16 @@ typedef struct node
 void	create_stack_a(t_node **head, char **argv, t_bool *valid);
 int		main(int argc, char **argv);
 
+/*		validate_argvs		*/
+int		validate_argvs(char **argv);
+int		validate_argv(char *argv);
+
 /*		utils.c			*/
 	//functions to allocate and free memory.
 
 void	free_all(t_node **head, char **argv);
 void	*ft_calloc(size_t nitems, size_t size);
 void	free_memory(char **str);
-int		ft_isdigit(char *c);
 
 /*		ft_split.c		*/
 	//The split (and ft_calloc) from the libft adapted for this program.

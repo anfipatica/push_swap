@@ -1,2 +1,3 @@
-# push_swap_copy
 # push_swap
+
+Este proyecto consiste en implementar un algoritmo de ordenación lo más eficiente posible.

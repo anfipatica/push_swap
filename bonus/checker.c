@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ymunoz-m <ymunoz-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anfi <anfi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 18:14:02 by ymunoz-m          #+#    #+#             */
-/*   Updated: 2024/05/30 16:09:36 by ymunoz-m         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:11:43 by anfi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,13 @@ int	main(int argc, char **argv)
 	valid = true;
 	if (argc == 1)
 		return (0);
-	else
-		argv = ft_split(argv, ' ');
+	if (validate_argvs(argv) != 0)
+		return (write(2, "Error\n", 6));
+	argv = ft_split(argv, ' ');
 	create_stack_a(&head_a, argv, &valid);
 	ft_is_repeated(&head_a, &valid);
-	if (valid == false || head_a->tail->index == 0)
-		return (write(1, "Error\n", 6), free_all(&head_a, argv), 0);
+	if (valid == false)
+		return (write(2, "Error\n", 6), free_all(&head_a, argv), 0);
 	while (get_order(0, &head_a, &head_b, &valid) == 0)
 		;
 	if (ft_is_ordered(head_a) == 0 && !head_b && valid == true)

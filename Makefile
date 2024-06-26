@@ -1,10 +1,9 @@
-NAME = $(BIN_DIR)/push_swap
-NAME_BONUS = $(BIN_DIR)/checker
+NAME = push_swap
+NAME_BONUS = checker
 
 INC_DIR = ./inc
 OBJS_DIR = ./obj
 OBJS_BONUS_DIR = ./obj/bonus
-BIN_DIR = ./bin
 SRC_DIR = ./src
 BONUS_DIR = ./bonus
 
@@ -37,7 +36,8 @@ OBJS_BONUS = $(OBJS_BONUS_DIR)/check_arguments.o \
 			$(OBJS_BONUS_DIR)/rotate_nodes.o \
 			$(OBJS_BONUS_DIR)/swap_push_nodes.o \
 			$(OBJS_BONUS_DIR)/update_index.o \
-			$(OBJS_BONUS_DIR)/utils.o
+			$(OBJS_BONUS_DIR)/utils.o \
+			$(OBJS_BONUS_DIR)/validate_argvs.o
 
 GREEN = \033[0;32m
 BOLD = \033[1m
@@ -49,7 +49,6 @@ TEST = \033[0;95m
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@mkdir -p $(BIN_DIR)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@echo "\n$(GREEN)Compilation finished.\n→ You can find the push_swap executable in $(BOLD)bin\n"
 
@@ -62,9 +61,8 @@ $(OBJS_DIR)/%.o : $(SRC_DIR)/%.c
 bonus : $(NAME_BONUS)
 
 $(NAME_BONUS) : $(OBJS_BONUS)
-	@mkdir -p $(BIN_DIR)
 	@$(CC) $(CFLAGS) $(OBJS_BONUS) -o $(NAME_BONUS)
-	@echo "\n$(GREEN)Bonus compilation finished.\n→ You can find the checker executable in $(BOLD)bin\n"
+	@echo "\n$(GREEN)Bonus compilation finished.\n"
 
 $(OBJS_BONUS_DIR)/%.o : $(BONUS_DIR)/%.c
 	@echo "$(GRAY)Compiling bonus file  →   $(shell echo $< | awk -F / '{print $$2}')"
@@ -78,7 +76,7 @@ clean:
 	@$(RM) $(OBJS_DIR) 
 
 fclean: clean
-	@echo "$(TEST)Deleting $(BIN_DIR)  ...\n"
-	@$(RM) $(BIN_DIR)
+	@echo "$(TEST)Deleting $(NAME)  ...\n"
+	@$(RM) $(NAME) $(NAME_BONUS)
 
 re: fclean all

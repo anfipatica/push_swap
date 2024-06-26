@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ymunoz-m <ymunoz-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anfi <anfi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 20:20:36 by anfi              #+#    #+#             */
-/*   Updated: 2024/06/25 21:10:02 by ymunoz-m         ###   ########.fr       */
+/*   Updated: 2024/06/26 20:04:54 by anfi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int		validate_argv(char *argv);
 void	*ft_calloc(size_t nitems, size_t size);
 void	free_memory(char **str);
 void	free_all(t_node **head, char **argv);
-int		ft_isdigit(char *c);
 
 /*		ft_split.c		*/
 	//The split (and ft_calloc) from the libft adapted for this program.
