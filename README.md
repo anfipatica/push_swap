@@ -5,7 +5,7 @@
    - [1. Validación de datos](#1-validación-de-datos)
    - [2. Movimientos](#2-movimientos)
    - [3. Qué son los stacks](#3-qué-son-los-stacks)
-   - [4. Seleccionar método de ordenación](seleccionar-método-de-ordenación)
+   - [4. Seleccionar método de ordenación](#4-seleccionar-método-de-ordenación)
    - [5. El algoritmo turco](#5-el-algoritmo-turco)
 - [Consejos](#consejos)
 
