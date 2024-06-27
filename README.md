@@ -65,7 +65,8 @@ Una vez se han validado los argumentos y se puede proceder a la ordenación, com
 
 ### 4. El algoritmo turco.
 
-El funcionamiento básico del algoritmo es: pasamos al stack B todos los números hasta que en el stack A sólo queden 3 números.
+1. Pasamos al stack a los primeros dos nodos, siempre y cuando en el stack a queden 3 números. Es decir, si sólo tenemos 4 números, sólo pasamos 1 número.
+2. Emparejamos cada nodo del stack a con el siguiente nodo <u> más pequeño <u> del stack b.
 
 
 
