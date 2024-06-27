@@ -1,5 +1,7 @@
 # push_swap
-
+- [Resumen](#resumen)
+- [Recursos Útiles](#recursos-útiles)
+- [Explicación del proyecto](#explicación-del-proyecto)
 ## RESUMEN:
 Este proyecto consiste en implementar un algoritmo de ordenación lo más eficiente posible, partiendo de una serie de bases:
 
@@ -52,7 +54,25 @@ Los movimientos permitidos por el subject son los siguientes, divididos en tres 
 - pa: Coloca el primer nodo del stack B en el principio del stack A.
 - pb: Coloca el primer nodo del stack A en el principio del stack B.
 
-### 3. Seleccionar método de ordenación:
+### 3. Qué son los stacks:
+Como todo en la programación, no hay una única manera de resolver un problema, por lo que este planteamiento de push_swap es uno más de tantos válidos.
+
+En este caso, he trabajado los stacks como listas doblemente enlazadas. Si en la libft hiciste el bonus te sonarán de algo, pero hasta este proyecto no llegas a entender las listas en su totalidad.
+
+Cada nodo se trata de una estructura en la cual almaceno:
+- el valor del número.
+- La posición del número en el stack.
+- el coste que tendrá mover ese nodo cuando le corresponda.
+- una serie de punteros a diferentes nodos:
+   - Al siguiente nodo de la lista (next).
+   - Al nodo anterior de la lista (prev).
+   - Al nodo de la cola de la lista.
+   - Al nodo con que le emparejemos en cada movimiento.
+
+Mover los nodos consiste básicamente en modificar a donde apuntan los punteros next y prev, y actualizar los índices de toda la lista.
+
+
+### 4. Seleccionar método de ordenación:
 Una vez se han validado los argumentos y se puede proceder a la ordenación, comprobamos cuantos números tenemos para ordenar:
 
 > [!TIP]
@@ -63,10 +83,37 @@ Una vez se han validado los argumentos y se puede proceder a la ordenación, com
 - Si tenemos tres números desordenados, comprobaremos si hacer **sa**, **ra** y/o **rra**.
 - Si tenemos más de tres números, procedemos a iniciar el algoritmo turco.
 
-### 4. El algoritmo turco.
+### 5. El algoritmo turco.
+
+> [!TIP]
+> Recomiendo ver el vídeo de Thuggonaut o leer el artículo original, enlazados en la sección de recursos, para ver sus explicaciones del algoritmo. No obstante, a continuación dejo mi explicación.
 
 1. Pasamos al stack a los primeros dos nodos, siempre y cuando en el stack a queden 3 números. Es decir, si sólo tenemos 4 números, sólo pasamos 1 número.
-2. Emparejamos cada nodo del stack a con el siguiente nodo <u> más pequeño <u> del stack b.
 
+2. Emparejamos cada nodo del stack a con el siguiente nodo ***más pequeño*** del stack b.
+     2.1 Si no encontramos un nodo más pequeño, lo emparejamos con el nodo más grande de todo el stack b.
 
+3. Una vez emparejados, calculamos el coste de colocar ambos nodos en la cabeza de su respectivo stack + el movimiento del push.
+     3.1 Si encontramos un coste de 1 o de 2, dejamos de calcular y movemos directamente esos nodos. Si no, seleccionamos los nodos con el coste más barato.
+
+4. Repetimos el paso 2 y 3 hasta que en el stack A sólo queden 3 nodos. En ese momento ordenamos esos 3 nodos y procedemos a pushear desde el stack b.
+
+5. Para pasar de vuelta los nodos al stack A tenemos que volver a emparejar nodos, pero en esta ocasión emparejamos con el siguiente nodo ***más grande*** del stack a.
+     5.1. Si no encontramos un nodo más grande, emparejamos con el nodo más pequeño de todo el stack a.
+
+6. Repetimos el proceso de calcular costes y movemos.
+
+7. Cuando hayamos vaciado todo el stack B, tendremos el stack A casi ordenado. Lo más probable es que el número más grande y el más pequeño estén colindantes. Calculamos la posición del nodo más pequeño y en base a eso detectamos si es más rentable hacer **ra** o **rra**, y lo hacemos hasta que el nodo más pequeño esté en la cabeza de la lista.
+
+8. Si todo está bien, deberíamos tener nuestra lista ya ordenada.
+
+## Consejos:
+
+- Si puedo dar algún consejo respecto a este proyecto, sería que no descuides la validación de datos. El testeo del parseo en las evaluaciones será exhaustivo y si está mal no importa lo eficiente que sea el algoritmo. Prueba más cosas de las que prueba el tester ya que hay casos que no contempla.
+
+- Antes de empezar a plantear el algoritmo, familiarízate con las listas. Prueba a crear listas, a imprimir sus valores, a quitar y añadir nodos... Después implementa los movimientos, empieza a pasar nodos de un stack a otro, no con el objetivo de ordenar sino de que todo va funcionando correctamente. Cuando ya tengas todo esto claro, comienza el siguiente desafío que es programar el algoritmo.
+
+- Si tienes dificultades para entender algo, dibújalo. Si no tienes una tablet, usa paint, excalidraw, boli y papel... dibuja los nodos con sus punteros y cambia hacia donde apuntan en cada movimiento. Si usas un medio digital mueve físicamente el nodo. Hasta que no hice esto no terminó de hacerme click el funcionamiento de cada movimiento y creo que puede ayudar mucho si te está costando.
+
+- No dejes que la frustración pueda contigo. El algoritmo turco es complejo de codear pero no es imposible, y es muy reconfortante ver su eficiencia como fruto del esfuerzo.
 
