@@ -46,16 +46,14 @@ Comentándolo con compañeros hay cierto debate al respecto de cómo actuar con 
 ### 2. Movimientos:
 Los movimientos permitidos por el subject son los siguientes, divididos en tres clases:
 
->*Cuando en los movimientos haya una **?** indica que el mismo movimiento existe tanto para el stack A como para el stack B*
-
 #### 1. Rotación (rotate):
-- r?: Coloca el nº en la primera posición del stack en la última. El nº en la 2a posición pasa a la primera, y el último se convierte en penúltimo.
-- rr?: Coloca el último nº del stack en la primera posición. El penúltimo pasa al último lugar y el primero se convierte en segundo.
-- rr: realiza r? en ambos stacks a la vez.
-- rrr: realiza rr? en amos stacks a  la vez.
+- ra / rb: Coloca el nº en la primera posición del stack en la última. El nº en la 2a posición pasa a la primera, y el último se convierte en penúltimo.
+- rra / rrb: Coloca el último nº del stack en la primera posición. El penúltimo pasa al último lugar y el primero se convierte en segundo.
+- rr: realiza ra o rb en ambos stacks a la vez.
+- rrr: realiza rra o rrb en amos stacks a  la vez.
 
 #### 2. Intercambio (swap):
-- s?: Intercambia el primer y segundo número del stack especificado.
+- sa / sb: Intercambia el primer y segundo número del stack especificado.
 >*Como dato, con el algoritmo turco no utilizamos más que **sa** cuando tenemos dos o tres números*
 
 #### 3. Empujar (push):
