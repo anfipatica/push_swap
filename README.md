@@ -2,6 +2,13 @@
 - [Resumen](#resumen)
 - [Recursos Útiles](#recursos-útiles)
 - [Explicación del proyecto](#explicación-del-proyecto)
+   - [1. Validación de datos](#1-validación-de-datos)
+   - [2. Movimientos](#2-movimientos)
+   - [3. Qué son los stacks](#3-qué-son-los-stacks)
+   - [4. Seleccionar método de ordenación](seleccionar-método-de-ordenación)
+   - [5. El algoritmo turco](#5-el-algoritmo-turco)
+- [Consejos](#consejos)
+
 ## RESUMEN:
 Este proyecto consiste en implementar un algoritmo de ordenación lo más eficiente posible, partiendo de una serie de bases:
 
