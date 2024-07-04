@@ -10,6 +10,7 @@
 > - [BONUS](#bonus)
 > - [Consejos](#consejos)
 
+<br>
 
 ## RESUMEN:
 Este proyecto consiste en implementar un algoritmo de ordenación lo más eficiente posible, partiendo de una serie de bases:
@@ -17,6 +18,7 @@ Este proyecto consiste en implementar un algoritmo de ordenación lo más eficie
 1. Los números se encuentran en un "Stack A" y disponemos de un "Stack B" para ayudarnos con la ordenación.
 2. Para pasar un número a otro stack, se debe encontrar en la primera posición de su stack.
 3. Para colocar un número en la primera posición, podemos: Intercambiar el 1er y 2o número, colocar el primer número al final, o colocar el último número al principio.
+<br>
 
 ## RECURSOS ÚTILES:
 
@@ -24,6 +26,7 @@ Recursos que utilicé durante la realización del proyecto:
 - [Video de Thuggonaut explicando el proyecto y el algoritmo turco](https://www.youtube.com/watch?v=wRvipSG4Mmk)
 - [Artículo escrito por A. Yigit Ogun explicando cómo funciona el algoritmo turco.](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
 - [El tester creado por gemartin99](https://github.com/gemartin99/Push-Swap-Tester)
+<br>
 
 ## EXPLICACIÓN DEL PROYECTO:
 ### 1. Validación de datos:
@@ -113,6 +116,7 @@ Una vez se han validado los argumentos y se puede proceder a la ordenación, com
 7. Cuando hayamos vaciado todo el stack B, tendremos el stack A casi ordenado. Lo más probable es que el número más grande y el más pequeño estén colindantes. Calculamos la posición del nodo más pequeño y en base a eso detectamos si es más rentable hacer **ra** o **rra**, y lo hacemos hasta que el nodo más pequeño esté en la cabeza de la lista.
 
 8. Si todo está bien, deberíamos tener nuestra lista ya ordenada.
+<br>
 
 ## Bonus:
 
@@ -126,8 +130,7 @@ Creas el stack A, y quedas a la espera de recibir instrucciones. Lees una instru
 
 Cuando se dejen de recibir instrucciones (cuando el usuario presiona ***ctrl + d***), compruebas si con los movimientos que se han realizado la lista está ordenada. De ser así, imprimes "OK" por pantalla, si no, imprimes "KO".
 
-
-
+<br>
 
 ## Consejos:
 
