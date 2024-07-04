@@ -6,7 +6,7 @@
 /*   By: ymunoz-m <ymunoz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:17:04 by anfi              #+#    #+#             */
-/*   Updated: 2024/03/21 14:56:53 by ymunoz-m         ###   ########.fr       */
+/*   Updated: 2024/07/04 17:23:06 by ymunoz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	sa(t_node **head)
 {
+	if (!(*head))
+		return ;
 	if ((*head)->tail->index == 2)
 	{
 		(*head)->next = (*head)->next->next;
@@ -54,6 +56,8 @@ void	pb_last_node(t_node **head_b, t_node **head_a)
 {
 	t_node	*aux_tail;
 
+	if (!(*head_b))
+		return ;
 	(*head_a)->prev = *head_b;
 	(*head_b)->next = *head_a;
 	aux_tail = (*head_a)->tail;
@@ -70,7 +74,7 @@ void	pb(t_node **head_one, t_node **head_two)
 
 	if (!(*head_two))
 		pb_empty_stack(head_one, head_two);
-	else if (!(*head_one)->next)
+	else if (!(*head_one) || !(*head_one)->next)
 		pb_last_node(head_one, head_two);
 	else
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_orders.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anfi <anfi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ymunoz-m <ymunoz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:32:44 by ymunoz-m          #+#    #+#             */
-/*   Updated: 2024/05/29 19:06:12 by anfi             ###   ########.fr       */
+/*   Updated: 2024/07/04 17:22:10 by ymunoz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 int	execute_order(char *order, t_node **head_a, t_node **head_b)
 {
 	if (!ft_strcmp(order, "sa\n"))
+		return (sa(head_a), 0);
+	if (!ft_strcmp(order, "sb\n"))
 		return (sa(head_a), 0);
 	if (!ft_strcmp(order, "pa\n"))
 		return (pb(head_b, head_a), 0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_nodes.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anfi <anfi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ymunoz-m <ymunoz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 22:01:55 by anfi              #+#    #+#             */
-/*   Updated: 2024/03/13 22:43:52 by anfi             ###   ########.fr       */
+/*   Updated: 2024/07/04 17:17:43 by ymunoz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ra(t_node **head)
 {
 	t_node	*aux_tail;
 
+	if (!(*head))
+		return ;
 	(*head)->prev = (*head)->tail;
 	(*head)->tail->next = *head;
 	aux_tail = (*head)->tail;
@@ -32,6 +34,8 @@ void	rra(t_node **head)
 {
 	t_node	*aux_tail;
 
+	if (!(*head))
+		return ;
 	(*head)->tail->next = *head;
 	(*head)->prev = (*head)->tail;
 	(*head)->tail->prev->next = NULL;
@@ -47,6 +51,8 @@ void	rr(t_node **head_one, t_node **head_two)
 {
 	t_node	*tail_one;
 
+	if (!(*head_one) || !(*head_two))
+		return ;
 	(*head_one)->prev = (*head_one)->tail;
 	(*head_one)->tail->next = *head_one;
 	tail_one = (*head_one)->tail;
@@ -74,6 +80,8 @@ void	rrr(t_node **head_one, t_node **head_two)
 	t_node	*tail_one;
 	t_node	*tail_two;
 
+	if (!(*head_one) || !(*head_two))
+		return ;
 	(*head_one)->tail->next = *head_one;
 	(*head_one)->prev = (*head_one)->tail;
 	(*head_one)->tail->prev->next = NULL;
