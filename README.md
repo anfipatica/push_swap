@@ -7,6 +7,7 @@
 >    - [3. Qué son los stacks](#3-qué-son-los-stacks)
 >    - [4. Seleccionar método de ordenación](#4-seleccionar-método-de-ordenación)
 >    - [5. El algoritmo turco](#5-el-algoritmo-turco)
+> - [BONUS](#bonus)
 > - [Consejos](#consejos)
 
 
@@ -112,6 +113,21 @@ Una vez se han validado los argumentos y se puede proceder a la ordenación, com
 7. Cuando hayamos vaciado todo el stack B, tendremos el stack A casi ordenado. Lo más probable es que el número más grande y el más pequeño estén colindantes. Calculamos la posición del nodo más pequeño y en base a eso detectamos si es más rentable hacer **ra** o **rra**, y lo hacemos hasta que el nodo más pequeño esté en la cabeza de la lista.
 
 8. Si todo está bien, deberíamos tener nuestra lista ya ordenada.
+
+## Bonus:
+
+El bonus de este proyecto consiste en crear un checker propio. Como ya tendrás hecho el gnl, el bonus es increíblemente sencillo, es casi como un regalo por haber conseguido implementar un algoritmo lo suficientemente eficiente para lograr el 100%
+
+Por lo que si es tu caso, te recomiendo encarecidamente hacer el bonus del push_swap.
+
+La validación de datos es la misma, los movimientos son los mismos, pero en vez de implementar un algoritmo de ordenación, debes implementar funciones que lean de la terminal, o sea el gnl.
+
+Creas el stack A, y quedas a la espera de recibir instrucciones. Lees una instrucción, compruebas que sea una instrucción válida, y ejecutas la instrucción.
+
+Cuando se dejen de recibir instrucciones (cuando el usuario presiona ***ctrl + d***), compruebas si con los movimientos que se han realizado la lista está ordenada. De ser así, imprimes "OK" por pantalla, si no, imprimes "KO".
+
+
+
 
 ## Consejos:
 
